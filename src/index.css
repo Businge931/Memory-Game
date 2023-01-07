@@ -1,13 +1,15 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@200;300;400;500;600;700;800&display=swap");
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --font-family: "Atkinson Hyperlegible", sans-serif;
+
+  --color-bg: #152938;
+  --color-primary: #fda214;
+  --color-primary-fade: #ffb84a;
+  --color-gray-verydark: #304859;
+  --color-gray-dark: #7191a5;
+  --color-gray-light: #6395b8;
+  --color-gray-verylight: #bcced9;
+  --color-white-dark: #f2f2f2;
+  --color-white: #fcfcfc;
 }

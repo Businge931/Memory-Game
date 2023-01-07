@@ -1,0 +1,24 @@
+.tile {
+  width: 70px;
+  height: 70px;
+  background: var(--color-bg);
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 55px;
+  color: var(--color-white);
+  font-family: var(--font-family);
+  cursor: pointer;
+  transition: all 0.5s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tile:hover {
+  background: var(--color-gray-verylight);
+}
+.tile:active {
+  background: var(--color-primary);
+}

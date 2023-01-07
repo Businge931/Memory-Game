@@ -1,0 +1,114 @@
+.home {
+  height: 100vh;
+  background: var(--color-bg);
+  font-family: var(--font-family);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.home-heading {
+  color: var(--color-white);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+
+  padding-bottom: 24px;
+}
+.home-buttons {
+  height: 559px;
+  width: 654px;
+  border-radius: 20px;
+  background: var(--color-white);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home-buttons_theme,
+.home-buttons_players,
+.home-buttons_grid-size {
+  width: 100%;
+}
+.button-heading {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  color: var(--color-gray-dark);
+
+  padding-bottom: 16px;
+}
+.theme-buttons,
+.player-buttons,
+.grid-size-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  margin-bottom: 30px;
+}
+
+.start-game-button {
+  height: 70px;
+  width: 541px;
+  background: var(--color-primary);
+  border-radius: 35px;
+  border: none;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  text-align: center;
+  color: var(--color-white);
+  cursor: pointer;
+
+  transition: all 0.5s ease;
+}
+
+.start-game-button:hover {
+  background: var(--color-primary-fade);
+}
+
+.active {
+  background: var(--color-gray-verydark);
+}
+
+@media screen and (max-width: 550px) {
+  .home {
+    justify-content: flex-start;
+    padding-top: 45px;
+  }
+  .home-buttons {
+    width: 327px;
+    height: fit-content;
+  }
+  .button-heading {
+    font-size: 18px;
+  }
+  .theme-buttons,
+  .player-buttons,
+  .grid-size-buttons {
+    margin-bottom: 24px;
+  }
+  .theme-buttons button,
+  .grid-size-buttons button {
+    height: 40px;
+    width: 134px;
+    font-size: 16px;
+    line-height: 19.84px;
+  }
+  .player-buttons button {
+    width: 62px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 19.84px;
+  }
+  .start-game-button {
+    width: 297px;
+    height: 48px;
+  }
+}

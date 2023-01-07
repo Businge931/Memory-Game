@@ -1,0 +1,49 @@
+.button {
+  height: 72px;
+  width: 240px;
+  border-radius: 10px;
+  background: #dfe7ec;
+  border: none;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-gray-dark);
+  cursor: pointer;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.button span {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.button:hover {
+  color: var(--color-white);
+  background: var(--color-primary);
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 30px;
+  top: -20%;
+  background-color: var(--color-primary);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.button-container p {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 5px;
+  color: var(--color-bg);
+  padding-top: 5px;
+}
