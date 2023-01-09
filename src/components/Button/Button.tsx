@@ -5,6 +5,7 @@ import { useAppSelector } from "../../store/hooks";
 type buttonProps = {
   children: React.ReactNode;
   onClick: React.MouseEventHandler;
+  // isActive:false
 };
 
 const Button = ({ children, onClick }: buttonProps) => {
