@@ -2,14 +2,21 @@ import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Tile from "../../components/Tile/Tile";
 import "./GameScreen.css";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+
 // import CurrentTurn from "../../components/CurrentTurnButton/CurrentTurn";
 
 const GameScreen = () => {
+  let grid = useAppSelector((state) => state.chooseGrid.gridArray);
+  // console.log(grid);
+
   return (
     <div>
       <Navbar />
       <div className="tiles">
-        <Tile />
+        {grid.map((tile, index) => (
+          <Tile key={index} />
+        ))}
       </div>
       <div className="current-turn">
         {/* <CurrentTurn playerNumber={1} moves={4} />
