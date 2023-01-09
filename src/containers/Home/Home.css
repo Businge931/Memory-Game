@@ -52,6 +52,30 @@
   margin-bottom: 30px;
 }
 
+.button {
+  background: var(--color-gray-verylight);
+  color: var(--color-white);
+  border-radius: 26px;
+  border: none;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 32px;
+  text-align: center;
+  cursor: pointer;
+
+  transition: all 0.5s ease;
+  padding: 10px 15px;
+  width: 100%;
+}
+.button:hover {
+  background: var(--color-gray-light);
+}
+
+.activeStyles {
+  background: var(--color-gray-verydark);
+}
+
 .start-game-button {
   height: 70px;
   width: 541px;
@@ -71,10 +95,6 @@
 
 .start-game-button:hover {
   background: var(--color-primary-fade);
-}
-
-.active {
-  background: var(--color-gray-verydark);
 }
 
 @media screen and (max-width: 550px) {
