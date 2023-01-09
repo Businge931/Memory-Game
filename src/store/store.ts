@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { activeButtonSlice } from "./activeButtonSlice";
+import { chooseGridSlice } from "./Settings/setGridSlice";
 
 export const store = configureStore({
   reducer: {
     activeButton: activeButtonSlice.reducer,
+    chooseGrid: chooseGridSlice.reducer,
   },
 });
 
