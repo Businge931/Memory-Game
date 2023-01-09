@@ -3,6 +3,11 @@
   height: 400px;
   border: 1px solid var(--color-primary-fade);
   margin: 10px auto;
+
+  /* display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: max-content; */
+  /* gap: 5px; */
 }
 .current-turn {
   width: 100%;
