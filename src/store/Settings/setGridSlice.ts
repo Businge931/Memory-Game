@@ -14,7 +14,7 @@ export const chooseGridSlice = createSlice({
   name: "chooseGrid",
   initialState,
   reducers: {
-    setGridByFour: (state) => {
+    setGridByFour: (state, action) => {
       state.grid = 16;
       const fourGrid = generateNumbers(4, 10);
       state.gridArray.concat(fourGrid);

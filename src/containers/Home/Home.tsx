@@ -92,9 +92,7 @@ const Home = () => {
             {activeButton.themes.map((theme, index) => (
               <button
                 key={index}
-                onClick={() => {
-                  toggleTheme(index);
-                }}
+                onClick={() => toggleTheme(index)}
                 className={toggleThemeStyles(index)}
               >
                 {theme.theme}
@@ -109,9 +107,7 @@ const Home = () => {
             {players.playerNumber.map((players, index) => (
               <button
                 key={index}
-                onClick={() => {
-                  togglePlayers(index);
-                }}
+                onClick={() => togglePlayers(index)}
                 className={togglePlayerStyles(index)}
               >
                 {players.number}
@@ -126,9 +122,7 @@ const Home = () => {
             {grid.grids.map((grid, index) => (
               <button
                 key={index}
-                onClick={() => {
-                  toggleGrid(index);
-                }}
+                onClick={() => toggleGrid(index)}
                 className={toggleGridStyles(index)}
               >
                 {grid.grid}
