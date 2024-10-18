@@ -1,11 +1,19 @@
 import { useState } from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
-// import { useAppDispatch, useAppSelector } from "../../store/hooks";
-// import { setGridBySix, setGridByFour } from "../../store/Settings/setGridSlice";
+import {
+  useAppDispatch,
+  // useAppSelector
+} from "../../store/hooks";
+import { setGridSize } from "../../store/Settings/setGridSlice";
+import { generateNumbers } from "../../utils/randomNumbers";
+import { setPlayerNumber } from "../../store/Settings/setPlayerNumberSlice";
+import { setTheme } from "../../store/Settings/setThemeSlice";
 
 const Home = () => {
-  const [activeButton, setActiveButton] = useState({
+  const dispatch = useAppDispatch();
+
+  const [themeButton, setThemeButton] = useState({
     activeButton: null as any,
     themes: [
       { id: 1, theme: "Numbers" },
@@ -30,31 +38,41 @@ const Home = () => {
     ],
   });
 
-  // const dispatch = useAppDispatch();
-  // const grid = useAppSelector((state) => state.chooseGrid.gridArray);
-  // console.log(grid);
-
   const toggleTheme = (index: number) => {
-    setActiveButton({
-      ...activeButton,
-      activeButton: activeButton.themes[index],
+    setThemeButton({
+      ...themeButton,
+      activeButton: themeButton.themes[index],
     });
+    dispatch(setTheme(themeButton.themes[index].theme));
+    // console.log(themeButton.themes[index].theme);
   };
   const togglePlayers = (index: number) => {
     setPlayers({
       ...players,
       players: players.playerNumber[index],
     });
+    dispatch(setPlayerNumber(players.playerNumber[index].number));
+    // console.log(players.playerNumber[index].number);
   };
   const toggleGrid = (index: number) => {
     setGrid({
       ...grid,
       grid: grid.grids[index],
     });
+    if (grid.grids[index].grid === "4x4") {
+      dispatch(
+        setGridSize({ gridSize: 16, gridArray: generateNumbers(4, 10) })
+      );
+    } else {
+      dispatch(
+        setGridSize({ gridSize: 36, gridArray: generateNumbers(6, 20) })
+      );
+    }
   };
 
+  //active button styles
   const toggleThemeStyles = (index: number) => {
-    if (activeButton.themes[index] === activeButton.activeButton) {
+    if (themeButton.themes[index] === themeButton.activeButton) {
       return "button activeStyles";
     } else {
       return "button ";
@@ -75,13 +93,6 @@ const Home = () => {
     }
   };
 
-  // const setGridFourHandler = () => {
-  //   dispatch(setGridByFour());
-  // };
-  // const setGridSixHandler = () => {
-  //   dispatch(setGridBySix());
-  // };
-
   return (
     <div className="home">
       <h1 className="home-heading">memory</h1>
@@ -89,7 +100,7 @@ const Home = () => {
         <div className="home-buttons_theme">
           <h4 className="button-heading">Select Theme</h4>
           <div className="theme-buttons">
-            {activeButton.themes.map((theme, index) => (
+            {themeButton.themes.map((theme, index) => (
               <button
                 key={index}
                 onClick={() => toggleTheme(index)}
