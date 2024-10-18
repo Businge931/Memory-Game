@@ -19,6 +19,6 @@
 .tile:hover {
   background: var(--color-gray-verylight);
 }
-.tile:active {
+.tile.matched {
   background: var(--color-primary);
 }
