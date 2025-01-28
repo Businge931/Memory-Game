@@ -8,7 +8,6 @@ import { generateNumbers } from "../../utils/randomNumbers";
 import { Icons } from "../../utils/icons";
 import { IconTypes } from "../../utils/icons";
 
-// import CurrentTurn from "../../components/CurrentTurnButton/CurrentTurn";
 
 const GameScreen = () => {
   const grid = useAppSelector((state) => state.chooseGrid.gridArray);
